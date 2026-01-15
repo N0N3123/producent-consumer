@@ -99,7 +99,6 @@ class SystemMonitor:
                 "statistics": {
                     "total_produced": final_stats['total_produced'],
                     "total_consumed": final_stats['total_consumed'],
-                    "items_in_queue": final_stats['items_in_queue'],
                     "average_throughput_per_sec": final_stats['average_throughput'],
                     "efficiency_percent": final_stats['efficiency']
                 },
@@ -119,7 +118,6 @@ class SystemMonitor:
                 stats = export_data["statistics"]
                 lines.append(f'    "total_produced": {stats["total_produced"]},')
                 lines.append(f'    "total_consumed": {stats["total_consumed"]},')
-                lines.append(f'    "items_in_queue": {stats["items_in_queue"]},')
                 lines.append(f'    "average_throughput_per_sec": {stats["average_throughput_per_sec"]},')
                 lines.append(f'    "efficiency_percent": {stats["efficiency_percent"]}')
                 lines.append('  },')
@@ -151,7 +149,6 @@ class SystemMonitor:
             "total_time_seconds": round(elapsed, 2),
             "total_produced": produced,
             "total_consumed": consumed,
-            "items_in_queue": self.queue.qsize(),
             "average_throughput": round(produced / elapsed if elapsed > 0 else 0, 2),
             "efficiency": round((consumed / produced * 100) if produced > 0 else 0, 2),
             "start_time": datetime.fromtimestamp(self.start_time).isoformat(),

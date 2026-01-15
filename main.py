@@ -152,7 +152,6 @@ class ProducerConsumerSystem:
         print(f"\n[PRODUKCJA I KONSUMPCJA]:")
         print(f"  Wyprodukowano: {stats['total_produced']} elementów")
         print(f"  Skonsumowano: {stats['total_consumed']} elementów")
-        print(f"  W kolejce: {stats['items_in_queue']} elementów")
         
         print(f"\n[WYDAJNOSC]:")
         print(f"  Średnia przepustowość: {stats['average_throughput']} elem/s")
